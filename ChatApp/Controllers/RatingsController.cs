@@ -66,7 +66,7 @@ namespace ChatApp.Controllers
             List<Rating> results = new List<Rating>();
             if (query == null)
             {
-                return PartialView(results);
+                return PartialView(ratings);
             }
             foreach (Rating rating in ratings)
             {
