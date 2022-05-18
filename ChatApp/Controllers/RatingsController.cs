@@ -31,6 +31,11 @@ namespace ChatApp.Controllers
             ViewData["AverageRate"] = RatingService.AverageRate;
             return View(service.GetAll());
         }
+        //public IActionResult SearchQ()
+        //{
+        //    ViewData["AverageRate"] = RatingService.AverageRate;
+        //    return View(service.GetAll());
+        //}
 
         [HttpPost]
         public IActionResult Search(string query)
@@ -51,6 +56,26 @@ namespace ChatApp.Controllers
                 }
             }
             return View(results);
+        }
+
+        public IActionResult SearchQ(string query)
+        {
+
+            ViewData["AverageRate"] = RatingService.AverageRate;
+            var ratings = service.GetAll();
+            List<Rating> results = new List<Rating>();
+            if (query == null)
+            {
+                return PartialView(results);
+            }
+            foreach (Rating rating in ratings)
+            {
+                if (rating.Name.Contains(query) || (rating.Text != null && rating.Text.Contains(query)))
+                {
+                    results.Add(rating);
+                }
+            }
+            return PartialView(results);
         }
 
         // GET: Ratings/Details/5
