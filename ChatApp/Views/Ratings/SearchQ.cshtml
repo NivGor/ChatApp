@@ -1,17 +1,21 @@
 ﻿@model IEnumerable<ChatApp.Models.Ratings.Rating>
 
-@{
+@*@{
     ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
+<form asp-action="SearchQ">
+    <input name="query" id="search"/>
+    <input type="submit" value="Search" />
+</form>  
 <p>
     This app current rating is: @ViewData["AverageRate"]
 </p>
 <p>
     <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+</p>*@
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -29,7 +33,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>*@
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -51,5 +55,10 @@
             </td>
         </tr>
 }
-    </tbody>
-</table>
+@*    </tbody>
+</table>*@
+
+@*@section Scripts 
+{
+<script src="~/js/search.js"></script>
+}*@

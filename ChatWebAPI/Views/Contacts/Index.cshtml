@@ -1,13 +1,11 @@
-﻿@model IEnumerable<ChatApp.Models.Ratings.Rating>
+﻿@model IEnumerable<ChatAppWebAPI.Models.Contact>
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
-<p>
-    This app current rating is: @ViewData["AverageRate"]
-</p>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -18,13 +16,13 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Rate)
+                @Html.DisplayNameFor(model => model.Server)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Text)
+                @Html.DisplayNameFor(model => model.Last)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                @Html.DisplayNameFor(model => model.LastDate)
             </th>
             <th></th>
         </tr>
@@ -36,13 +34,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Rate)
+                @Html.DisplayFor(modelItem => item.Server)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Text)
+                @Html.DisplayFor(modelItem => item.Last)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.LastDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
