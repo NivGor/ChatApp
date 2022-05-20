@@ -12,8 +12,7 @@ namespace ChatAppWebAPI.Models
         public String Password { get; set; }
         [Required]
         public List<Contact> Contacts { get; set; }
-        [Required]
-        List<Chat> Chats { get; set; }
+       
 
 
     }

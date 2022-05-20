@@ -13,6 +13,8 @@ namespace ChatAppWebAPI.Models
         public String Last { get; set; }
         [Required]
         public DateTime LastDate { get; set; }
+        public List<Message> messages { get; set; }
+
 
     }
 }

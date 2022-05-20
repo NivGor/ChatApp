@@ -6,12 +6,11 @@ namespace ChatAppWebAPI.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Sender { get; set; }
-        [Required]
-        public string Reciever { get; set; }
-        [Required]
         public string Content { get; set; }
         [Required]
-        public string Time { get; set; }
+        public DateTime Created { get; set; }
+        [Required]
+        public Boolean Sent { get; set; }
+        
     }
 }
