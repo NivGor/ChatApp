@@ -17,7 +17,7 @@ namespace ChatWebAPI.Controllers
 
         // GET: Contacts
         [HttpGet]
-        [Route("{username}/[controller]")]
+        [Route("/api/{username}/[controller]")]
         public IEnumerable<Contact> Get(string username)
         {
             return StaticDB.users.Find(x => x.Username == username).Contacts;
@@ -32,7 +32,7 @@ namespace ChatWebAPI.Controllers
         //// To protect from overposting attacks, enable the specific properties you want to bind to.
         //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Route("{username}/[controller]")]
+        [Route("/api/{username}/[controller]")]
         public void Post(string username, [Bind("Id,Name,Server,Last,LastDate")] Contact contact)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -40,7 +40,7 @@ namespace ChatWebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{username}/[controller]/{contactId}")]
+        [Route("/api/{username}/[controller]/{contactId}")]
         public Contact Details(string username, string contactId)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -49,7 +49,7 @@ namespace ChatWebAPI.Controllers
         }
 
         [HttpPut]
-        [Route("{username}/[controller]/{contactId}")]
+        [Route("/api/{username}/[controller]/{contactId}")]
         public void Put(string username, string contactId, string name, string server)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -62,7 +62,7 @@ namespace ChatWebAPI.Controllers
 
         // GET: Contacts/Delete/5
         [HttpDelete]
-        [Route("{username}/[controller]/{contactId}")]
+        [Route("/api/{username}/[controller]/{contactId}")]
         public void Delete(string username,string contactId)
         {
             User user = StaticDB.users.Find(x => x.Username == username);

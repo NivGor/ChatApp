@@ -8,7 +8,7 @@ namespace ChatAppWebAPI.Models
         [Required]
         public string Content { get; set; }
         [Required]
-        public DateTime Created { get; set; }
+        public string Created { get; set; }
         [Required]
         public Boolean Sent { get; set; }
         

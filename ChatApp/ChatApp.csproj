@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\static\css\main.9791a511.css.map" />
+    <None Include="wwwroot\static\js\787.ec704a7a.chunk.js" />
+    <None Include="wwwroot\static\js\787.ec704a7a.chunk.js.map" />
+    <None Include="wwwroot\static\js\main.7870aed8.js" />
+    <None Include="wwwroot\static\js\main.7870aed8.js.map" />
   </ItemGroup>
 
   <ItemGroup>

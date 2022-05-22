@@ -11,7 +11,7 @@ using ChatWebAPI.Models;
 namespace ChatWebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class InvitationsController : ControllerBase
     {
 

@@ -16,7 +16,7 @@ namespace ChatWebAPI.Controllers
     {
 
         [HttpGet]
-        [Route("[controller]")]
+        [Route("/api/[controller]")]
         public IEnumerable<User> Get(){
             return StaticDB.users;
             }
@@ -25,7 +25,7 @@ namespace ChatWebAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Route("[controller]")]
+        [Route("/api/[controller]")]
         public void Add([Bind("Username,DisplayName,Password")] User user)
         {
             StaticDB.users.Add(user);

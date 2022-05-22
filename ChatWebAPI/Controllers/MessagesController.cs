@@ -16,7 +16,7 @@ namespace ChatWebAPI.Controllers
     public class MessagesController : ControllerBase
     {
         [HttpGet]
-        [Route("{username}/Contacts/{contactId}/[controller]")]
+        [Route("/api/{username}/Contacts/{contactId}/[controller]")]
         public IEnumerable<Message> Get(string username, string contactId)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -31,7 +31,7 @@ namespace ChatWebAPI.Controllers
 
 
         [HttpPost]
-        [Route("{username}/Contacts/{contactId}/[controller]")]
+        [Route("/api/{username}/Contacts/{contactId}/[controller]")]
         public void Post(string username, string contactId, [Bind("Id,Content,Created,Sent")] Message message)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -40,7 +40,7 @@ namespace ChatWebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{username}/Contacts/{contactId}/[controller]/{id}")]
+        [Route("/api/{username}/Contacts/{contactId}/[controller]/{id}")]
         public Message Details(string username, string contactId, int id)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -54,7 +54,7 @@ namespace ChatWebAPI.Controllers
         }
 
         [HttpPut]
-        [Route("{username}/Contacts/{contactId}/[controller]/{id}")]
+        [Route("/api/{username}/Contacts/{contactId}/[controller]/{id}")]
         public void Put(string username, string contactId, int id, string content)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
@@ -64,7 +64,7 @@ namespace ChatWebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("{username}/Contacts/{contactId}/[controller]/{id}")]
+        [Route("/api/{username}/Contacts/{contactId}/[controller]/{id}")]
         public void Delete(string username, string contactId, int id)
         {
             User user = StaticDB.users.Find(x => x.Username == username);
