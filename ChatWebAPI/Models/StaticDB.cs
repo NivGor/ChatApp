@@ -22,7 +22,10 @@ namespace ChatWebAPI.Models
                                         LastDate = DateTime.Now, Server = "server", messages = new List<Message>() } };
 
         public static List<User> users = new List<User>() { new User() { Username = "mojo", DisplayName = "jojo",
-                                                            Password = "123456a", Contacts = contacts} };
+                                                            Password = "123456a", Contacts = contacts} , 
+                                                            new User(){Username = "joe mama", DisplayName = "joe mama",
+                                                            Password = "123456a", Contacts = new List<Contact>() } };
+
 
     }
 }

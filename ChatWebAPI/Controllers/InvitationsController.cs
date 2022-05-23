@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ChatWebAPI.Data;
 using ChatWebAPI.Models;
+using ChatAppWebAPI.Models;
 
 namespace ChatWebAPI.Controllers
 {
@@ -16,9 +17,25 @@ namespace ChatWebAPI.Controllers
     {
 
         [HttpPost]
-        public void Post([Bind("Id,From,To,Server")] Invitation invitation)
+        public IActionResult Post([Bind("From,To,Server")] Invitation invitation)
         {
-
+            User user = StaticDB.users.Find(x => x.Username == invitation.To);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            Contact contact = user.Contacts.Find(x => x.Id == invitation.From);
+            if (contact != null)
+            {
+                return NotFound();
+            }
+            //setting a new contact
+            contact = new Contact();
+            contact.Id = invitation.From;
+            contact.Name = invitation.From;
+            contact.Server = invitation.Server;
+            user.Contacts.Add(contact);
+            return Ok();
         }
     }
 }

@@ -4,8 +4,7 @@ namespace ChatWebAPI.Models
 {
     public class Invitation
     {
-        public int Id { get; set; }
-
+        [Key]
         [Required]
         public string From { get; set; }
 
