@@ -1,10 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ChatWebAPI.Data;
+using ChatWebAPI.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ChatWebAPIContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ChatWebAPIContext") ?? throw new InvalidOperationException("Connection string 'ChatWebAPIContext' not found.")));
+
+builder.Services.AddSignalR();
 
 // Add services to the container.
 
@@ -36,5 +40,7 @@ app.UseCors("Allow All");
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHub<ChatHub>("/Hubs/Chat");
 
 app.Run();
