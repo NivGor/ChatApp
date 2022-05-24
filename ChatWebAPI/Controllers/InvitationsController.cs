@@ -34,6 +34,9 @@ namespace ChatWebAPI.Controllers
             contact.Id = invitation.From;
             contact.Name = invitation.From;
             contact.Server = invitation.Server;
+            contact.messages = new List<Message>();
+            contact.Last = "";
+            contact.LastDate = "";
             user.Contacts.Add(contact);
             return Ok();
         }

@@ -22,5 +22,7 @@ namespace ChatWebAPI.Data
         public DbSet<ChatWebAPI.Models.Invitation>? Invitation { get; set; }
 
         public DbSet<ChatAppWebAPI.Models.User>? User { get; set; }
+
+        public DbSet<ChatWebAPI.Models.Transfer>? Transfer { get; set; }
     }
 }

@@ -9,10 +9,8 @@ namespace ChatAppWebAPI.Models
         public String Name { get; set; }
         [Required]
         public String Server { get; set; }
-        [Required]
         public String Last { get; set; }
-        [Required]
-        public DateTime LastDate { get; set; }
+        public string LastDate { get; set; }
         public List<Message> messages { get; set; }
 
 

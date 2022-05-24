@@ -15,11 +15,11 @@ namespace ChatWebAPI.Models
 
         public static List<Contact> contacts = new List<Contact>() {
             new Contact() { Id = "1", Last = "a", Name = "mojo jojo",
-                                        LastDate = DateTime.Now, Server = "server", messages = messages},
+                                        LastDate = DateTime.Now.ToString(), Server = "server", messages = messages},
             new Contact() { Id = "2", Last = "a2", Name = "mojo jojo2",
-                                        LastDate = DateTime.Now, Server = "server" , messages = messages2},
+                                        LastDate = DateTime.Now.ToString(), Server = "server" , messages = messages2},
             new Contact() { Id = "3", Last = "a2", Name = "mojo jojo3",
-                                        LastDate = DateTime.Now, Server = "server", messages = new List<Message>() } };
+                                        LastDate = DateTime.Now.ToString(), Server = "server", messages = new List<Message>() } };
 
         public static List<User> users = new List<User>() { new User() { Username = "mojo", DisplayName = "jojo",
                                                             Password = "123456a", Contacts = contacts} , 
