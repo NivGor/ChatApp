@@ -111,7 +111,7 @@ namespace ChatApp.Controllers
             if (ModelState.IsValid)
             {
                 service.Create(rating.Name, rating.Rate, rating.Text);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Search));
             }
             return View(rating);
         }
