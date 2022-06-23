@@ -13,4 +13,4 @@ login screen, which doesn't require the web api to run)
 	runs on localhost:5026 ***
 
 The web api and the review page are in the same folder but the react application is
-in the ap2 folder. please download the latest branches
+in the ap2 folder. please download the latest branch (after_webAPI_2)
